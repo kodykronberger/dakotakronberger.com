@@ -12,7 +12,7 @@ http.createServer(function (request, response) {
     var pathname = url.parse(request.url).pathname;
     
     // If no pth was requested, direct back to home page.
-    if(pathname = "" || pathname = "/"){
+    if(pathname == "" || pathname == "/"){
         fs.readFile("www/index.html", function (error, data) {
             response.write(data.toString());
             response.end();
