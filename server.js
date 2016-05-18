@@ -26,7 +26,7 @@ http.createServer(function (request, response) {
                 response.write("404: Not found");
             } else {
                 // 200: File was found.
-                response.writeHead(200, { 'Content-Type': 'text/html' });
+                response.writeHead(200);
                 response.write(data.toString());
             }
             // End response.
