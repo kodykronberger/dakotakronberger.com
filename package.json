@@ -1,0 +1,20 @@
+{
+  "name": "dakotakronberger.com",
+  "version": "1.0.0",
+  "description": "My personal website, run on node.js.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kodykronberger/dakotakronberger.com.git"
+  },
+  "author": "Dakota Kronberger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kodykronberger/dakotakronberger.com/issues"
+  },
+  "homepage": "https://github.com/kodykronberger/dakotakronberger.com#readme"
+}
