@@ -1,0 +1,158 @@
+body {
+    color: #2B2B2B;
+}
+
+#wrapper {
+    min-height: 100%;
+}
+
+#nav-items {
+    float: right;
+}
+
+.content {
+    padding: 20px;
+}
+
+#profile-photo {
+    border-radius: 1000px;
+    width: 170px;
+    margin-top: 13px;
+    -webkit-box-shadow: 10px 10px 44px -13px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 44px -13px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 44px -13px rgba(0, 0, 0, 0.75);
+}
+
+.section-paragraphs {
+    padding: 30px;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+footer {
+    position: absolute bottom: 0;
+}
+
+nav {
+    margin-bottom: 0 !important;
+}
+
+.jumbotron {
+    background-image: url(../img/jumbo-back%20edited.jpg);
+    margin-top: 65px;
+}
+
+.jumbotron h1 {
+    color: white;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.jumbotron h1 small {
+    color: #D4D4D4;
+}
+
+#sidebar-footer-title {
+    text-align: center;
+}
+
+.logo-desktop {
+    color: #eb6864;
+}
+
+#contact-msg {
+    height: 200px;
+}
+
+.blog-icon {
+    font-size: 0.5em;
+}
+
+#page {
+    margin-top: 95px;
+}
+
+.page-header h1 {
+    text-align: center;
+}
+
+#contact-btn-submit {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.media-object {
+    width: 100px;
+}
+
+.arrow {
+    width: 65px;
+}
+
+.logo {
+    margin: 0;
+    margin-top: -2px;
+}
+
+
+/*
+.media-heading {
+    font-style: italic;
+}
+*/
+
+.list-group .label {
+    float: right;
+}
+
+.list-date {
+    font-size: 0.8em;
+    color: slategrey;
+}
+
+.nav-stacked li a {
+    text-align: center;
+}
+
+.nav li a:hover {
+    background-color: #40618A;
+}
+
+.pager {
+    width: 150px;
+    margin: 10px auto;
+}
+
+.rss {
+    float: right;
+    font-size: 1.7em;
+    color: orange;
+    margin-top: -7px;
+}
+
+.rss:hover {
+    color: darkorange !important;
+}
+
+.navbar-brand {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.navbar-brand {
+    font-family: 'Bree Serif', serif;
+    font-size: 1.8em;
+}
+
+.navbar-brand span {
+    color: #25B5E4;
+}
+
+
+/* Fix for tooltip width */
+
+.tooltip-inner {
+    max-width: 270px;
+}
