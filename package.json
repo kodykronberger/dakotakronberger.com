@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/kodykronberger/dakotakronberger.com/issues"
   },
-  "homepage": "https://github.com/kodykronberger/dakotakronberger.com#readme"
+  "homepage": "https://github.com/kodykronberger/dakotakronberger.com#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }

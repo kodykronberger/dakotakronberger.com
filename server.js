@@ -2,37 +2,15 @@
     Creates a server, that serves up local static files.
     Created by: Dakota Kronberger
 */
+var express = require("express");
+var app = express();
 
-var http = require('http');
-var fs = require('fs');
-var url = require('url');
+app.use(express.static('www'));
 
-http.createServer(function (request, response) {
-    // Parse the pathname requested.
-    var pathname = url.parse(request.url).pathname;
-    
-    // If no pth was requested, direct back to home page.
-    if(pathname == "" || pathname == "/"){
-        fs.readFile("www/index.html", function (error, data) {
-            response.write(data.toString());
-            response.end();
-        });
-    } else {
-        // Try to grab the file from the path specified.
-        fs.readFile("www" + pathname, function (error, data) {
-            if (error) {
-                // 404: File not found.
-                response.writeHead(404, { 'Content-Type': 'text/html' });
-                response.write("404: Not found");
-            } else {
-                // 200: File was found.
-                response.writeHead(200);
-                response.write(data.toString());
-            }
-            // End response.
-            response.end();
-        });
-    }
-}).listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000, function () {
+  console.log('Server started! ' + new Date().toTimeString());
+});
 
-console.log('Server started! ' + new Date().toTimeString());
+app.use(function(req, res, next) {
+  res.status(404).send('404: Sorry! I cannot be found...');
+});
