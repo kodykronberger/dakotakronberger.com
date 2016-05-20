@@ -59,37 +59,49 @@ function initializePagerArrows() {
 // Validates input fields on text boxes
 function initializeValidateContact() {
     $("#contact-name").on("blur", function(){
-        if(this.value.length > 30) {
-            $(this).parent().addClass("has-error");
-            $(this).next(".help-inline").fadeIn();
-            errors.name = true;
-        } else {
-            $(this).parent().removeClass("has-error");
-            $(this).next(".help-inline").fadeOut();
-            errors.name = false;
-        }
+        validateName(this);
     });
     $("#contact-email").on("blur", function(){
-        var reg = /\S+@\S+\.\S+/;
-        if(!reg.test(this.value) && this.value.length > 0) {
-            $(this).parent().addClass("has-error");
-            $(this).next(".help-inline").fadeIn();
-            errors.email = true;
-        } else {
-            $(this).parent().removeClass("has-error");
-            $(this).next(".help-inline").fadeOut();
-            errors.email = false;
-        }
+        validateEmail(this);
     });
     $("#contact-msg").on("blur", function(){
-        if(this.value.length > 500) {
-            $(this).parent().addClass("has-error");
-            $(this).next(".help-inline").fadeIn();
+        validateMessage(this);
+    });
+}
+
+function validateName( field ) {
+    if(field.value.length > 30 || field.value.length < 1) {
+            $(field).parent().addClass("has-error");
+            $(field).next(".help-inline").fadeIn();
+            errors.name = true;
+        } else {
+            $(field).parent().removeClass("has-error");
+            $(field).next(".help-inline").fadeOut();
+            errors.name = false;
+        }
+}
+
+function validateEmail ( field ) {
+    var reg = /\S+@\S+\.\S+/;
+        if(!reg.test(field.value) || field.value.length < 1) {
+            $(field).parent().addClass("has-error");
+            $(field).next(".help-inline").fadeIn();
+            errors.email = true;
+        } else {
+            $(field).parent().removeClass("has-error");
+            $(field).next(".help-inline").fadeOut();
+            errors.email = false;
+        }
+}
+
+function validateMessage ( field ) {
+    if(field.value.length > 500 || field.value.length < 1) {
+            $(field).parent().addClass("has-error");
+            $(field).next(".help-inline").fadeIn();
             errors.msg = true;
         } else {
-            $(this).parent().removeClass("has-error");
-            $(this).next(".help-inline").fadeOut();
+            $(field).parent().removeClass("has-error");
+            $(field).next(".help-inline").fadeOut();
             errors.msg = false;
         }
-    });
 }

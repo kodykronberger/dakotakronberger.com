@@ -22,8 +22,11 @@
     <script src="js/jquery-1.12.3.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery-scrollto.js"></script>
+    
+    <!-- Custom scripts   -->
     <script src="js/app.js"></script>
     <script src="js/github.js"></script>
+    <script src="js/contact.js"></script>
 </head>
 
 <body>
@@ -253,24 +256,25 @@
                     <div class="col-md-8 col-md-offset-2">
                         <div class="row panel panel-default ">
                             <div class="panel-body">
-                                <form id="contact-form">
+                                <form id="contact-form" method="post" action="/contact">
                                     <div class="form-group">
                                         <label for="contact-name">Full Name</label>
-                                        <input type="text" class="form-control" id="contact-name" placeholder="First and last name">
-                                        <span class="help-inline" style="color: red; display: none;">Name must be less than 30 characters.</span>
+                                        <input type="text" class="form-control" id="contact-name" name="contactName" placeholder="First and last name">
+                                        <span class="help-inline" style="color: red; display: none;">Name must be filled out and less than 30 characters.</span>
                                     </div>
                                     <div class="form-group">
                                         <label for="contact-email">Email Address <em style="font-size: 0.8em; color: #eb6864;">(optional)</em></label>
-                                        <input type="email" class="form-control" id="contact-email" placeholder="Email address">
-                                        <span class="help-inline" style="color: red; display: none;">Must be a valid email address.</span>
+                                        <input type="email" class="form-control" id="contact-email"  name="contactEmail" placeholder="Email address">
+                                        <span class="help-inline" style="color: red; display: none;">Email must be filled out and valid.</span>
                                     </div>
                                     <div class="form-group">
                                         <label for="contact-msg">Message</label>
-                                        <textarea class="form-control" id="contact-msg" placeholder="Only 500 characters are allowed."></textarea>
+                                        <textarea class="form-control" id="contact-msg"  name="contactMsg" placeholder="Only 500 characters are allowed."></textarea>
+                                        <span class="help-inline" style="color: red; display: none;">Message must be filled out and less than 500 characters.</span>
                                     </div>
                                     <div class="form-group">
                                         <button id="contact-btn-submit" type="submit" class="btn btn-primary">Submit</button>
-                                        <span class="help-inline" style="color: red; display: none;">Message must be less than 500 characters.</span>
+                                        
                                     </div>
                                 </form>
                             </div>
@@ -295,6 +299,26 @@
             </div>
         </div>
     </div>
+    
+    <div id="formSuccessDialog" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Success!</h4>
+            </div>
+            <div class="modal-body">
+                <p>Your message has been sent. Thank you, <span id="formUser"></span>, for contacting me.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 </body>
 <script src="js/bootstrap.min.js"></script>
 
